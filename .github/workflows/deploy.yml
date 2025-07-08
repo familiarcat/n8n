@@ -18,9 +18,9 @@ jobs:
           chmod 600 key.pem
 
       - name: Deploy project to EC2
-        
         run: |
-          cat scripts/deploy_n8n_ec2.sh | ssh -o StrictHostKeyChecking=no -i ./key.pem ec2-user@${{ secrets.EC2_PUBLIC_IP }} 'bash -s'
+          export EC2_IP="${{ secrets.EC2_PUBLIC_IP }}"
+          ssh -o StrictHostKeyChecking=no -i ./key.pem ec2-user@$EC2_IP 'bash -s' < scripts/deploy_n8n_ec2.sh
 
       - name: Import n8n workflow to running instance
         run: |
