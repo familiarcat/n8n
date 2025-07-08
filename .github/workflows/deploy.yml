@@ -21,7 +21,7 @@ jobs:
       - name: Deploy project to EC2
         run: |
           export EC2_IP="${{ secrets.EC2_PUBLIC_IP }}"
-          ssh -o StrictHostKeyChecking=no -i ./key.pem unbuntu@$EC2_IP 'bash -s' < scripts/deploy_n8n_ec2.sh
+          ssh -o StrictHostKeyChecking=no -i ./key.pem ubuntu@$EC2_IP 'bash -s' < scripts/deploy_n8n_ec2.sh
 
       - name: Import n8n workflow to running instance
         run: |
