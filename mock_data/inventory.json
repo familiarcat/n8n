@@ -1,0 +1,37 @@
+[
+  {
+    "item": "Mozzarella Cheese",
+    "type": "Kitchen",
+    "threshold": 10
+  },
+  {
+    "item": "Tomato Sauce",
+    "type": "Kitchen",
+    "threshold": 5
+  },
+  {
+    "item": "Pizza Dough",
+    "type": "Kitchen",
+    "threshold": 15
+  },
+  {
+    "item": "IPA Keg",
+    "type": "Bar",
+    "threshold": 2
+  },
+  {
+    "item": "Whiskey Bottle",
+    "type": "Bar",
+    "threshold": 4
+  },
+  {
+    "item": "To-Go Boxes",
+    "type": "FOH",
+    "threshold": 30
+  },
+  {
+    "item": "Napkins",
+    "type": "FOH",
+    "threshold": 100
+  }
+]

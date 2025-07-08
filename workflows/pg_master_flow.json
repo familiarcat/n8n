@@ -1,5 +1,44 @@
 {
-  "name": "Pie Guy Master Flow",
-  "nodes": [],
-  "connections": {}
+  "name": "pg_master_flow",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "slack-timeoff",
+        "method": "POST"
+      },
+      "name": "Slack Time-Off Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "sheetId": "staff_requests"
+      },
+      "name": "Log to Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 1,
+      "position": [
+        480,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Slack Time-Off Webhook": {
+      "main": [
+        [
+          {
+            "node": "Log to Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
 }

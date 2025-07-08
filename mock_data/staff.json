@@ -1,0 +1,163 @@
+[
+  {
+    "name": "Brady Georgen",
+    "role": "General Manager",
+    "tier": 1,
+    "hourlyRate": 38.46,
+    "type": "salary"
+  },
+  {
+    "name": "Tanya Ruiz",
+    "role": "Kitchen Manager",
+    "tier": 2,
+    "hourlyRate": 27.88,
+    "type": "salary"
+  },
+  {
+    "name": "Milo Barnes",
+    "role": "Assistant General Manager",
+    "tier": 2,
+    "hourlyRate": 26.44,
+    "type": "salary"
+  },
+  {
+    "name": "Lena Foster",
+    "role": "Front of House Manager",
+    "tier": 2,
+    "hourlyRate": 25.0,
+    "type": "salary"
+  },
+  {
+    "name": "Jerome Carter",
+    "role": "Bar Manager",
+    "tier": 2,
+    "hourlyRate": 25.96,
+    "type": "salary"
+  },
+  {
+    "name": "Eli Navarro",
+    "role": "Lead Cook",
+    "tier": 3,
+    "hourlyRate": 22.0,
+    "type": "hourly"
+  },
+  {
+    "name": "Morgan Lee",
+    "role": "Lead Server",
+    "tier": 3,
+    "hourlyRate": 18.0,
+    "type": "hourly"
+  },
+  {
+    "name": "Zara Kim",
+    "role": "Lead Bartender",
+    "tier": 3,
+    "hourlyRate": 20.0,
+    "type": "hourly"
+  },
+  {
+    "name": "DeShawn Bell",
+    "role": "Shift Supervisor",
+    "tier": 3,
+    "hourlyRate": 19.0,
+    "type": "hourly"
+  },
+  {
+    "name": "Rachel Wu",
+    "role": "Shift Supervisor",
+    "tier": 3,
+    "hourlyRate": 19.0,
+    "type": "hourly"
+  },
+  {
+    "name": "Hector Alvarez",
+    "role": "Line Cook",
+    "tier": 4,
+    "hourlyRate": 18.0,
+    "type": "hourly"
+  },
+  {
+    "name": "Dina Cruz",
+    "role": "Line Cook",
+    "tier": 4,
+    "hourlyRate": 17.5,
+    "type": "hourly"
+  },
+  {
+    "name": "Tyrell Jenkins",
+    "role": "Prep Cook",
+    "tier": 4,
+    "hourlyRate": 16.0,
+    "type": "hourly"
+  },
+  {
+    "name": "Brittany Young",
+    "role": "Prep Cook",
+    "tier": 4,
+    "hourlyRate": 15.5,
+    "type": "hourly"
+  },
+  {
+    "name": "Jamal Brooks",
+    "role": "Server",
+    "tier": 4,
+    "hourlyRate": 5.0,
+    "type": "tipped"
+  },
+  {
+    "name": "Anna Morales",
+    "role": "Server",
+    "tier": 4,
+    "hourlyRate": 5.0,
+    "type": "tipped"
+  },
+  {
+    "name": "Lexi Tran",
+    "role": "Host",
+    "tier": 4,
+    "hourlyRate": 14.0,
+    "type": "hourly"
+  },
+  {
+    "name": "Jason Hunt",
+    "role": "Expo",
+    "tier": 4,
+    "hourlyRate": 14.5,
+    "type": "hourly"
+  },
+  {
+    "name": "Sasha Nguyen",
+    "role": "Bartender",
+    "tier": 4,
+    "hourlyRate": 7.0,
+    "type": "tipped"
+  },
+  {
+    "name": "Devon Grant",
+    "role": "Barback",
+    "tier": 4,
+    "hourlyRate": 13.0,
+    "type": "hourly"
+  },
+  {
+    "name": "Nina Patel",
+    "role": "Dishwasher",
+    "tier": 4,
+    "hourlyRate": 13.5,
+    "type": "hourly"
+  },
+  {
+    "name": "Corey Dawson",
+    "role": "Dishwasher",
+    "tier": 4,
+    "hourlyRate": 13.5,
+    "type": "hourly"
+  },
+  {
+    "name": "Angel Lopez",
+    "role": "Delivery Driver",
+    "tier": 4,
+    "hourlyRate": 16.0,
+    "type": "hourly"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "employee": "Tanya Ruiz",
+    "day": "Monday",
+    "shift": "10:00-18:00"
+  },
+  {
+    "employee": "Milo Barnes",
+    "day": "Monday",
+    "shift": "12:00-20:00"
+  },
+  {
+    "employee": "Eli Navarro",
+    "day": "Monday",
+    "shift": "10:00-18:00"
+  },
+  {
+    "employee": "Zara Kim",
+    "day": "Monday",
+    "shift": "17:00-01:00"
+  },
+  {
+    "employee": "Jamal Brooks",
+    "day": "Monday",
+    "shift": "17:00-01:00"
+  },
+  {
+    "employee": "Lexi Tran",
+    "day": "Monday",
+    "shift": "16:00-00:00"
+  },
+  {
+    "employee": "Tyrell Jenkins",
+    "day": "Monday",
+    "shift": "09:00-17:00"
+  },
+  {
+    "employee": "Nina Patel",
+    "day": "Monday",
+    "shift": "17:00-01:00"
+  }
+]
