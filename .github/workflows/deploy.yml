@@ -1,4 +1,4 @@
-name: Deploy n8n to EC2
+name: Deploy to EC2
 
 on:
   push:
@@ -7,25 +7,29 @@ on:
 
 jobs:
   deploy:
-    name: Deploy to EC2
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-    - name: Setup SSH key
-      run: |
-        echo "${{ secrets.EC2_SSH_PRIVATE_KEY }}" > key.pem
-        chmod 600 key.pem
-        ssh-keygen -y -f key.pem > key.pub
-        echo "✅ SSH key prepared"
+      - name: Write SSH key to file
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.EC2_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
 
-    - name: Deploy project to EC2
-      run: |
-        ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@${{ secrets.EC2_PUBLIC_IP }} << 'EOF'
-          cd ~/n8n
-          git pull origin main
-          docker compose down
-          docker compose up -d --build
-        EOF
+      - name: Add EC2 IP to known_hosts
+        run: ssh-keyscan -H ${{ secrets.EC2_PUBLIC_IP }} >> ~/.ssh/known_hosts
+
+      - name: Copy project files to EC2
+        run: |
+          scp -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -r . ubuntu@${{ secrets.EC2_PUBLIC_IP }}:~/app
+
+      - name: SSH into EC2 and deploy
+        run: |
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_PUBLIC_IP }} "
+            cd ~/app &&
+            docker compose down || true &&
+            docker compose up -d --build
+          "
