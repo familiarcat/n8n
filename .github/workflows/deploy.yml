@@ -10,26 +10,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Write SSH key to file
+      - name: Set up SSH key
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.EC2_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
 
-      - name: Add EC2 IP to known_hosts
-        run: ssh-keyscan -H ${{ secrets.EC2_PUBLIC_IP }} >> ~/.ssh/known_hosts
-
-      - name: Copy project files to EC2
+      - name: Add EC2 host to known_hosts
         run: |
-          scp -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -r . ubuntu@${{ secrets.EC2_PUBLIC_IP }}:~/app
+          ssh-keyscan -H ${{ secrets.EC2_PUBLIC_IP }} >> ~/.ssh/known_hosts
+
+      - name: Upload deployment archive (n8n.zip) to EC2
+        run: |
+          scp -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no n8n.zip ubuntu@${{ secrets.EC2_PUBLIC_IP }}:/home/ubuntu/
 
       - name: SSH into EC2 and deploy
         run: |
-          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_PUBLIC_IP }} "
-            cd ~/app &&
-            docker compose down || true &&
-            docker compose up -d --build
-          "
+          ssh -i ~/.ssh/id_rsa ubuntu@${{ secrets.EC2_PUBLIC_IP }} << 'EOF'
+            set -e
+            mkdir -p ~/app
+            unzip -o ~/n8n.zip -d ~/app
+            cd ~/app
+            chmod +x deploy.sh
+            ./deploy.sh
+          EOF
