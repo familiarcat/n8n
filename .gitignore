@@ -1,0 +1,43 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+.ssh/
+.npm/
+.vscode-server/
+
+# OS/system files
+.DS_Store
+Thumbs.db
+
+# Bash/system session files
+.bash_history
+.bash_logout
+.bashrc
+.profile
+.viminfo
+.wget-hsts
+.sudo_as_admin_successful
+
+# Docker artifacts
+docker-compose.yml.swp
+docker-compose.yml.backup
+
+# Cache
+.cache/
+
+# Dotnet
+.dotnet/
+
+# Git metadata
+.git/
+
+# Optional: ignore `Running` file if it's ephemeral or system-generated
+Running
